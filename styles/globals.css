@@ -20,3 +20,8 @@ h1{
   color: rgb(255, 255, 255);
   margin-top: 0;
 }
+
+p{
+  color: white;
+  max-width: 100%;
+}
