@@ -8,7 +8,7 @@ import Hero from "../components/widgets/Hero";
 
 const cx = classNames.bind(style);
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ tracks }) => {
   return (
     <PageWrapper>
       <Head>
@@ -18,9 +18,20 @@ const Home: NextPage = () => {
       </Head>
       <h1 className={cx("title")}>Nova 2</h1>
       <Hero />
+      {/* {tracks.map((track) => (
+        <p>{track.name}</p>
+      ))} */}
+      <p>{JSON.stringify(tracks, null, 2)}</p>
       {/* <div className="" */}
     </PageWrapper>
   );
 };
+
+export async function getStaticProps() {
+  // const res = await fetch("");
+  // const tracks = await res.json();
+
+  return { props: { tracks: [] } };
+}
 
 export default Home;
